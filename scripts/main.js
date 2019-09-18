@@ -5,8 +5,6 @@ var THUMBNAIL_LINK_SELECTOR = "[data-image-role='trigger']";
 var HIDDEN_DETAIL_CLASS = "hidden-detail";
 var TINY_EFFECT_CLASS = "is_tiny";
 var ESC_KEY = 27;
-var F_ARROW = document.querySelector("f-arrow");
-var B_ARROW = document.querySelector("b-arrow");
 
 
 function setDetails(imageUrl, titleText) {
