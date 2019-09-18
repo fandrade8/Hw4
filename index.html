@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Ottergram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="stylesheets/styles.css">
 
@@ -20,10 +20,10 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <title>Ottergram</title>
 </head>
 
 <body>
@@ -34,74 +34,41 @@
   <main class="main-content">
     <ul class="thumbnail-list">
       <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/garden.jpg" alt="">
-          <span class="thumbnail-title">Grid Garden</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/defence.jpg" alt="">
-          <span class="thumbnail-title">Flexbox Defence</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
+        <a href="img/otter1.jpg" data-image-role="trigger"
+                                 data-image-title="Stayin'Alive"
+                                 data-image-url="img/otter1.jpg">
           <img class="thumbnail-image" src="img/otter1.jpg" alt="Barry the Otter">
           <span class="thumbnail-title">Berry</span>
         </a>
       </li>
       <li class="thumbnail-item">
-        <a href="#">
+        <a href="img/otter2.jpg" data-image-role="trigger"
+                                 data-image-title="How Deep Is Your Love"
+                                 data-image-url="img/otter2.jpg">
           <img class="thumbnail-image" src="img/otter2.jpg" alt="Robert the Otter">
           <span class="thumbnail-title">Robin</span>
         </a>
       </li>
-      <li class="thumbnail-item">
-        <a href="#">
+      <li class="thumbnail-item" data-image-role="trigger"
+                                 data-image-title="You Should Be Dancing"
+                                 data-image-url="img/otter3.jpg">
+        <a href="img/otter3.jpg">
           <img class="thumbnail-image" src="img/otter3.jpg" alt="Maurice the Otter">
           <span class="thumbnail-title">Maurice</span>
         </a>
       </li>
-      <li class="thumbnail-item">
-        <a href="#">
+      <li class="thumbnail-item" data-image-role="trigger"
+                                 data-image-title="Night Fever"
+                                 data-image-url="img/otter4.jpg">
+        <a href="img/otter4.jpg">
           <img class="thumbnail-image" src="img/otter4.jpg" alt="Lesly the Otter">
           <span class="thumbnail-title">Lesly</span>
         </a>
       </li>
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/otter5.jpg" alt="Barbara the Otter">
-          <span class="thumbnail-title">Barbara</span>
-        </a>
-      </li>
-
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/otter1.jpg" alt="Barry the Otter">
-          <span class="thumbnail-title">Berry</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/otter2.jpg" alt="Robert the Otter">
-          <span class="thumbnail-title">Robin</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/otter3.jpg" alt="Maurice the Otter">
-          <span class="thumbnail-title">Maurice</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
-          <img class="thumbnail-image" src="img/otter4.jpg" alt="Lesly the Otter">
-          <span class="thumbnail-title">Lesly</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="#">
+      <li class="thumbnail-item" data-image-role="trigger"
+                                 data-image-title="To Love Somebody"
+                                 data-image-url="img/otter5.jpg">
+        <a href="img/otter5.jpg">
           <img class="thumbnail-image" src="img/otter5.jpg" alt="Barbara the Otter">
           <span class="thumbnail-title">Barbara</span>
         </a>
@@ -109,13 +76,17 @@
     </ul>
 
     <div class="detail-image-container">
-      <div class="detail-image-frame">
-        <img class="detail-image" src="img/otter1.jpg" alt="">
-        <span class="detail-image-title">Stayin' Alive</span>
+      <div class="b-arrow"></div>
+      <div class="detail-image-frame" data-image-role="frame">
+        <img class="detail-image" data-image-role="target" src="img/otter1.jpg" alt="">
+        <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
       </div>
-    </div>
+      <div class="f-arrow"></div>
 
+    </div>
   </main>
+
+  <script src="scripts/main.js" charset="utf-8"></script>
 
 </body>
 
