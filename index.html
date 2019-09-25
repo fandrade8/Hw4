@@ -1,93 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="stylesheets/styles.css">
-
-  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <title>Ottergram</title>
+  <meta charset="UTF-8">
+  <title>coffeerun</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
+<body class="container">
+    <header>
+        <h1>CoffeeRun</h1>
+    </header>
 
-<body>
-  <header class="main-header">
-    <h1 class="logo-text">Ottergram</h1>
-  </header>
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" type="email" name="emailAddress"
+                        id="emailInput" value="" placeholder="dr@who.com">
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="short">
+                            Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="tall" checked>
+                            Tall
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="grande">
+                            Grande
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select id="flavorShot" class="form-control" name="flavor">
+                            <option value="">None</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <input name="strength" id="strengthLevel" type="range"
+                        value="30">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
 
-  <main class="main-content">
-    <ul class="thumbnail-list">
-      <li class="thumbnail-item">
-        <a href="img/otter1.jpg" data-image-role="trigger"
-                                 data-image-title="Stayin'Alive"
-                                 data-image-url="img/otter1.jpg">
-          <img class="thumbnail-image" src="img/otter1.jpg" alt="Barry the Otter">
-          <span class="thumbnail-title">Berry</span>
-        </a>
-      </li>
-      <li class="thumbnail-item">
-        <a href="img/otter2.jpg" data-image-role="trigger"
-                                 data-image-title="How Deep Is Your Love"
-                                 data-image-url="img/otter2.jpg">
-          <img class="thumbnail-image" src="img/otter2.jpg" alt="Robert the Otter">
-          <span class="thumbnail-title">Robin</span>
-        </a>
-      </li>
-      <li class="thumbnail-item" data-image-role="trigger"
-                                 data-image-title="You Should Be Dancing"
-                                 data-image-url="img/otter3.jpg">
-        <a href="img/otter3.jpg">
-          <img class="thumbnail-image" src="img/otter3.jpg" alt="Maurice the Otter">
-          <span class="thumbnail-title">Maurice</span>
-        </a>
-      </li>
-      <li class="thumbnail-item" data-image-role="trigger"
-                                 data-image-title="Night Fever"
-                                 data-image-url="img/otter4.jpg">
-        <a href="img/otter4.jpg">
-          <img class="thumbnail-image" src="img/otter4.jpg" alt="Lesly the Otter">
-          <span class="thumbnail-title">Lesly</span>
-        </a>
-      </li>
-      <li class="thumbnail-item" data-image-role="trigger"
-                                 data-image-title="To Love Somebody"
-                                 data-image-url="img/otter5.jpg">
-        <a href="img/otter5.jpg">
-          <img class="thumbnail-image" src="img/otter5.jpg" alt="Barbara the Otter">
-          <span class="thumbnail-title">Barbara</span>
-        </a>
-      </li>
-    </ul>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Pending Orders:</h4>
+                <div data-coffee-order="checklist"></div>
+            </div>
+        </div>
+    </section>
 
-    <div class="detail-image-container">
-      <div class="b-arrow"></div>
-      <div class="detail-image-frame" data-image-role="frame">
-        <img class="detail-image" data-image-role="target" src="img/otter1.jpg" alt="">
-        <span class="detail-image-title" data-image-role="title">Stayin' Alive</span>
-      </div>
-      <div class="f-arrow"></div>
-
-    </div>
-  </main>
-
-  <script src="scripts/main.js" charset="utf-8"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
 </body>
-
 </html>

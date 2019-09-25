@@ -1,83 +1,25 @@
-var DETAIL_IMAGE_SELECTOR = "[data-image-role='target']";
-var DETAIL_TITLE_SELECTOR = "[data-image-role='title']";
-var DETAIL_FRAME_SELECTOR = "[data-image-role='frame']";
-var THUMBNAIL_LINK_SELECTOR = "[data-image-role='trigger']";
-var HIDDEN_DETAIL_CLASS = "hidden-detail";
-var TINY_EFFECT_CLASS = "is_tiny";
-var ESC_KEY = 27;
-
-
-function setDetails(imageUrl, titleText) {
+(function (window) {
   "use strict";
-  var detailImage = document.querySelector(DETAIL_IMAGE_SELECTOR);
-  detailImage.setAttribute("src", imageUrl);
+  var FORM_SELECTOR = "[data-coffee-order='form']";
+  var CHECKLIST_SELECTOR = "[data-coffee-order='checklist']";
 
-  var detailTitle = document.querySelector(DETAIL_TITLE_SELECTOR);
-  detailTitle.textContent = titleText;
-}
+  var App = window.App;
+  var Truck = App.Truck;
+  var Datastore = App.Datastore;
+  var FormHandler = App.FormHandler;
+  var CheckList = App.CheckList;
 
-function imageFromThumb(thumbnail) {
-  "use strict";
-  return thumbnail.getAttribute("data-image-url");
-}
+  var myTruck = new Truck("ncc-1701", new Datastore());
+  window.myTruck = myTruck;
 
-function titleFromThumb(thumbnail) {
-  "use strict";
-  return thumbnail.getAttribute("data-image-title");
-}
+  var checkList = new CheckList(CHECKLIST_SELECTOR);
+  checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
 
-function setDetailsFromThumb(thumbnail) {
-  "use strict";
-  setDetails(imageFromThumb(thumbnail), titleFromThumb(thumbnail));
-}
+  var formhandler = new FormHandler(FORM_SELECTOR);
 
-function addThumbClickHandler(thumb) {
-  "use strict";
-  thumb.addEventListener("click", function (event) {
-    event.preventDefault();
-    setDetailsFromThumb(thumb);
-    showDetails();
+  formhandler.addSubmitHandler(function (data) {
+    myTruck.createOrder.call(myTruck, data);
+    checkList.addRow.call(checkList, data);
   });
-}
 
-function getThumbnailsArray() {
-  "use strict";
-  var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
-  var thumbnailArray = [].slice.call(thumbnails);
-  return thumbnailArray;
-}
-
-function hideDetails() {
-  "use strict";
-  document.body.classList.add(HIDDEN_DETAIL_CLASS);
-}
-
-function showDetails() {
-  "use strict";
-  var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
-  document.body.classList.remove(HIDDEN_DETAIL_CLASS);
-  frame.classList.add(TINY_EFFECT_CLASS);
-  setTimeout(function () {
-    frame.classList.remove(TINY_EFFECT_CLASS);
-  }, 50);
-}
-
-function addKeyPressHandler() {
-  "use strict";
-  document.body.addEventListener("keyup", function (event) {
-    event.preventDefault();
-
-    if(event.keyCode === ESC_KEY) {
-      hideDetails();
-    }
-  });
-}
-
-function initializeEvents() {
-  "use strict";
-  var thumbnails = getThumbnailsArray();
-  thumbnails.forEach(addThumbClickHandler);
-  addKeyPressHandler();
-}
-
-initializeEvents();
+})(window);
